@@ -1,6 +1,8 @@
 {
   "name": "SweetCookies",
-  "app_id": "",
+  "app_id": "7b773101",
   "type": "ionic-angular",
-  "integrations": {}
+  "integrations": {
+    "cordova": {}
+  }
 }
