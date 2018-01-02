@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import {NavController, Platform, ToastController} from 'ionic-angular';
+import {Component} from '@angular/core';
+import {Platform, ToastController} from 'ionic-angular';
 import {IonicDeploy} from "../../IonicDeloy";
 
 @Component({
