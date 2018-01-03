@@ -51,4 +51,58 @@ export class AboutPage {
     }
   }
 
+  deviceInfo(){
+    let toast = this.toastCtrl.create({
+      message: '',
+      position: 'top',
+      showCloseButton: true,
+      closeButtonText: '关闭'
+    });
+
+    this.ionicDeploy.info()
+      .then(result => {
+        let json = eval('(' + JSON.stringify(result) + ')');
+        toast.setMessage(json.binary_version);
+        toast.present();
+      });
+  }
+
+  deviceDownInfo(){
+    let toast = this.toastCtrl.create({
+      message: '',
+      position: 'top',
+      showCloseButton: true,
+      closeButtonText: '关闭'
+    });
+
+    this.ionicDeploy.getVersions()
+      .then(result => {
+        toast.setMessage(result + '');
+        toast.present();
+      });
+  }
+
+  checkInfo(){
+    let toast = this.toastCtrl.create({
+      message: '',
+      position: 'top',
+      showCloseButton: true,
+      closeButtonText: '关闭'
+    });
+
+    this.ionicDeploy.check()
+      .then(result => {
+        let msg = '';
+        if (result){
+          msg = '是';
+        }else{
+          msg = '否'
+        }
+
+        toast.setMessage('是否存在更新版本？ ' + msg);
+        toast.present();
+      });
+
+  }
+
 }
